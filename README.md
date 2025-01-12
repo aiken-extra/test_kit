@@ -10,8 +10,8 @@ This library contains a set of tools, mainly for testing purposes:
 
 | ℹ️  | Package info    | aiken-extra/test_kit                                                                     | 🧰  |
 | --- | --------------- | ---------------------------------------------------------------------------------------- | --- |
-| 🔴  | **Version**     | **v0.0.1**                                                                               | 🛠️  |
-| 🔴  | **Codename**    | **hydrogen**                                                                             | 💧  |
+| 🔴  | **Version**     | **v0.0.2**                                                                               | 🛠️  |
+| 🔴  | **Codename**    | **helium**                                                                               | 🔥  |
 | 🔴  | **Status**      | **alpha**                                                                                | 🧪  |
 | 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.1.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0)     | ✅  |
 | 🟢  | **Depends on**  | [**aiken-lang/stdlib v2.2.0**](https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0) | ✅  |
@@ -19,7 +19,6 @@ This library contains a set of tools, mainly for testing purposes:
 
 <!-- | 🟢  | **Version**     | **boron**                                                                                | ✅  | -->
 
-<!-- | 🔴  | **Codename**    | **helium**                                                                               | 🔥  | -->
 <!-- | 🟡  | **Codename**    | **lithium**                                                                              | ☄️  | -->
 <!-- | 🟡  | **Codename**    | **beryllium**                                                                            | ☄️  | -->
 
@@ -62,14 +61,18 @@ use test_kit/collections/logic
 
 ## `fuzzy`
 
-Tuple fuzzer:
+Tuple and unique fuzzers:
 
 ```gleam
 use test_kit/fuzzy
 
+// A convenient way of generating tuples instead of doing map:
 test prop_tuple((a, b) via fuzzy.tuple(fuzzer_a, fuzzer_b)) { .. }
-
 // also available: tuple3 to tuple9
+
+// Generates 3 unique elements from the given fuzzer:
+test prop_unique((x1, x2, x3) via fuzzy.unique3(fuzzer_x)) { .. }
+// other element counts are also available
 ```
 
 Transaction data fuzzers:
