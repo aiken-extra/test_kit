@@ -72,9 +72,7 @@ use aiken/primitive/bytearray
 use cardano/address.{Address, Credential, Inline, Script, VerificationKey}
 use cardano/assets.{AssetName, PolicyId}
 use cardano/transaction.{OutputReference, TransactionId}
-
-pub type Any =
-  Data
+use test_kit.{Any}
 
 // ## Mock Hash
 

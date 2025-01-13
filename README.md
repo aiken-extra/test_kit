@@ -3,6 +3,7 @@
 This library contains a set of tools, mainly for testing purposes:
 
 - [`print`](#print) (pretty-print data with label)
+- [`to_data`](#to_data) (upcast any serialisable type to `Data`)
 - [`collections`](#collections) (contains some `list` and `zip3` functions)
 - [`fuzzy`](#fuzzy) (`address`, `assets`, `certificate`, `governance`, and `transaction` fuzzers)
 - [`time`](#time) (to `add`/`subtract` intervals and unwrapping finite time, taking its inclusivity into account)
@@ -36,6 +37,16 @@ print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
 
 By calling [`fuzz.label`](https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label) internally,
 `print` will also work with property testing.
+
+## `to_data`
+
+Upcast any serialisable type to `Data`:
+
+```gleam
+use test_kit.{to_data}
+
+any |> to_data // let data: Data = any
+```
 
 ## `collections`
 

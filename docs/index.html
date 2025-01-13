@@ -272,6 +272,7 @@
 <p>This library contains a set of tools, mainly for testing purposes:</p>
 <ul>
 <li><a href="#print"><code>print</code></a> (pretty-print data with label)</li>
+<li><a href="#to_data"><code>to_data</code></a> (upcast any serialisable type to <code>Data</code>)</li>
 <li><a href="#collections"><code>collections</code></a> (contains some <code>list</code> and <code>zip3</code> functions)</li>
 <li><a href="#fuzzy"><code>fuzzy</code></a> (<code>address</code>, <code>assets</code>, <code>certificate</code>, <code>governance</code>, and <code>transaction</code> fuzzers)</li>
 <li><a href="#time"><code>time</code></a> (to <code>add</code>/<code>subtract</code> intervals and unwrapping finite time, taking its inclusivity into account)</li>
@@ -297,6 +298,12 @@ print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
 </code></pre>
 <p>By calling <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label"><code>fuzz.label</code></a> internally,
 <code>print</code> will also work with property testing.</p>
+<h2><code>to_data</code></h2>
+<p>Upcast any serialisable type to <code>Data</code>:</p>
+<pre><code class="language-aiken">use test_kit.{to_data}
+
+any |&gt; to_data // let data: Data = any
+</code></pre>
 <h2><code>collections</code></h2>
 <p>Zip3:</p>
 <pre><code class="language-aiken">use test_kit/collections
@@ -524,9 +531,9 @@ mock_hash(1, size: 2)                    // #"0001"
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="./js/lunr.min.js?v=1.1.9"></script>
-    <script src="./js/index.js?v=1736683208"></script>
+    <script src="./js/index.js?v=1736788049"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="./search-data.js?v=1736683208"></script>
+    <script src="./search-data.js?v=1736788049"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {
