@@ -3,6 +3,7 @@
 This library contains a set of tools, mainly for testing purposes:
 
 - [`print`](#print) (pretty-print data with label)
+- [`to_data`](#to_data) (upcast any serialisable type to `Data`)
 - [`collections`](#collections) (contains some `list` and `zip3` functions)
 - [`fuzzy`](#fuzzy) (`address`, `assets`, `certificate`, `governance`, and `transaction` fuzzers)
 - [`time`](#time) (to `add`/`subtract` intervals and unwrapping finite time, taking its inclusivity into account)
@@ -10,8 +11,8 @@ This library contains a set of tools, mainly for testing purposes:
 
 | ℹ️  | Package info    | aiken-extra/test_kit                                                                     | 🧰  |
 | --- | --------------- | ---------------------------------------------------------------------------------------- | --- |
-| 🔴  | **Version**     | **v0.0.1**                                                                               | 🛠️  |
-| 🔴  | **Codename**    | **hydrogen**                                                                             | 💧  |
+| 🔴  | **Version**     | **v0.0.2**                                                                               | 🛠️  |
+| 🔴  | **Codename**    | **helium**                                                                               | 🔥  |
 | 🔴  | **Status**      | **alpha**                                                                                | 🧪  |
 | 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.1.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0)     | ✅  |
 | 🟢  | **Depends on**  | [**aiken-lang/stdlib v2.2.0**](https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0) | ✅  |
@@ -19,7 +20,6 @@ This library contains a set of tools, mainly for testing purposes:
 
 <!-- | 🟢  | **Version**     | **boron**                                                                                | ✅  | -->
 
-<!-- | 🔴  | **Codename**    | **helium**                                                                               | 🔥  | -->
 <!-- | 🟡  | **Codename**    | **lithium**                                                                              | ☄️  | -->
 <!-- | 🟡  | **Codename**    | **beryllium**                                                                            | ☄️  | -->
 
@@ -37,6 +37,16 @@ print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
 
 By calling [`fuzz.label`](https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label) internally,
 `print` will also work with property testing.
+
+## `to_data`
+
+Upcast any serialisable type to `Data`:
+
+```gleam
+use test_kit.{to_data}
+
+any |> to_data // let data: Data = any
+```
 
 ## `collections`
 
@@ -62,14 +72,18 @@ use test_kit/collections/logic
 
 ## `fuzzy`
 
-Tuple fuzzer:
+Tuple and unique fuzzers:
 
 ```gleam
 use test_kit/fuzzy
 
+// A convenient way of generating tuples instead of doing map:
 test prop_tuple((a, b) via fuzzy.tuple(fuzzer_a, fuzzer_b)) { .. }
-
 // also available: tuple3 to tuple9
+
+// Generates 3 unique elements from the given fuzzer:
+test prop_unique((x1, x2, x3) via fuzzy.unique3(fuzzer_x)) { .. }
+// other element counts are also available
 ```
 
 Transaction data fuzzers:

@@ -120,13 +120,13 @@
       <h2>
         <a href="./">test_kit</a>
         <span id="project-version">
-          <span>hydrogen-α </span>
+          <span>helium-α </span>
         </span>
         <script>
           "use strict";
 
           if ("undefined" !== typeof versionNodes) {
-            const currentVersion = "vhydrogen-α";
+            const currentVersion = "vhelium-α";
             if (! versionNodes.find(element => element.version === currentVersion)) {
               versionNodes.unshift({ version: currentVersion, url: "#" });
             }
@@ -188,12 +188,24 @@
 
         
 
+<h2>Types</h2>
+<ul>
+  
+  <li><a href="#Any">Any</a></li>
+  
+</ul>
+
 
 
 
 
 <h2>Functions</h2>
 <ul>
+  
+    
+        <li><a href="#to_data">to_data</a></li>
+
+      
   
     
         <li><a href="#print">print</a></li>
@@ -290,6 +302,37 @@
 
 
 
+<section class="module-members">
+  <h1 id="module-types" class="module-member-kind">
+    <a href="#module-types">Types</a>
+  </h1>
+
+  
+  <div class="member">
+    <div class="member-name">
+      <h2 id="Any">
+        <a href="#Any">
+	  Any
+        </a>
+      </h2>
+      
+        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit.ak#L6-L7"></a>
+      
+    </div>
+    <div class="custom-type-constructors">
+      <div class="rendered-markdown"></div>
+      
+      <h3>Alias</h3>
+      <div class="constructor-row">
+        <svg class="icon icon-at"><use xlink:href="#icon-at"></use></svg>
+        <pre class="constructor-name"><code class="hljs aiken">Any = Data</code></pre>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>
+
 
 
 
@@ -302,9 +345,23 @@
   
       <div class="member">
         <div class="member-name">
+          <h2 id="to_data"><pre class="hljs language-aiken">to_data(any: Any) -&gt; Data</pre></h2>
+          
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit.ak#L11-L14"></a>
+          
+        </div>
+        <div class="rendered-markdown"><p>A convenient way of upcasting any serialisable type to <code>Data</code>
+instead of doing <code>let data: Data = any</code></p>
+</div>
+      </div>
+    
+  
+  
+      <div class="member">
+        <div class="member-name">
           <h2 id="print"><pre class="hljs language-aiken">print(label: ByteArray, data: Data) -&gt; Void</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/hydrogen-α/lib/test_kit.ak#L9-L13"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit.ak#L19-L23"></a>
           
         </div>
         <div class="rendered-markdown"><p>Pretty-print data with label. This function calls
@@ -436,9 +493,9 @@ internally, so it will work with property testing.</p>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="./js/lunr.min.js?v=1.1.9"></script>
-    <script src="./js/index.js?v=1736322070"></script>
+    <script src="./js/index.js?v=1736788049"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="./search-data.js?v=1736322070"></script>
+    <script src="./search-data.js?v=1736788049"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {

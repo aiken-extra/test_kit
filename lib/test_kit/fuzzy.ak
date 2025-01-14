@@ -142,3 +142,58 @@ pub fn tuple9(
   let a, b, c, d, e, f, g, h, i <- fuzz.map9(a, b, c, d, e, f, g, h, i)
   (a, b, c, d, e, f, g, h, i)
 }
+
+// ## Unique Fuzzers
+
+/// Generates a list of `n` unique elements from the given fuzzer.
+pub fn unique(fuzzer: Fuzzer<a>, count n: Int) -> Fuzzer<List<a>> {
+  fuzzer |> fuzz.set_between(n, n)
+}
+
+/// Generates a tuple of 2 unique elements from the given fuzzer.
+pub fn unique2(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a)> {
+  expect [a, b] <- fuzz.map(unique(fuzzer, 2))
+  (a, b)
+}
+
+/// Generates a tuple of 3 unique elements from the given fuzzer.
+pub fn unique3(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a)> {
+  expect [a, b, c] <- fuzz.map(unique(fuzzer, 3))
+  (a, b, c)
+}
+
+/// Generates a tuple of 4 unique elements from the given fuzzer.
+pub fn unique4(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a)> {
+  expect [a, b, c, d] <- fuzz.map(unique(fuzzer, 4))
+  (a, b, c, d)
+}
+
+/// Generates a tuple of 5 unique elements from the given fuzzer.
+pub fn unique5(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a, a)> {
+  expect [a, b, c, d, e] <- fuzz.map(unique(fuzzer, 5))
+  (a, b, c, d, e)
+}
+
+/// Generates a tuple of 6 unique elements from the given fuzzer.
+pub fn unique6(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a, a, a)> {
+  expect [a, b, c, d, e, f] <- fuzz.map(unique(fuzzer, 6))
+  (a, b, c, d, e, f)
+}
+
+/// Generates a tuple of 7 unique elements from the given fuzzer.
+pub fn unique7(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a, a, a, a)> {
+  expect [a, b, c, d, e, f, g] <- fuzz.map(unique(fuzzer, 7))
+  (a, b, c, d, e, f, g)
+}
+
+/// Generates a tuple of 8 unique elements from the given fuzzer.
+pub fn unique8(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a, a, a, a, a)> {
+  expect [a, b, c, d, e, f, g, h] <- fuzz.map(unique(fuzzer, 8))
+  (a, b, c, d, e, f, g, h)
+}
+
+/// Generates a tuple of 9 unique elements from the given fuzzer.
+pub fn unique9(fuzzer: Fuzzer<a>) -> Fuzzer<(a, a, a, a, a, a, a, a, a)> {
+  expect [a, b, c, d, e, f, g, h, i] <- fuzz.map(unique(fuzzer, 9))
+  (a, b, c, d, e, f, g, h, i)
+}

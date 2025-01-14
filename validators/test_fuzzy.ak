@@ -1,8 +1,10 @@
 //// @hidden
 
+use aiken/collection/list
 use aiken/fuzz
 use test_kit/fuzzy.{
-  tuple, tuple3, tuple4, tuple5, tuple6, tuple7, tuple8, tuple9,
+  tuple, tuple3, tuple4, tuple5, tuple6, tuple7, tuple8, tuple9, unique, unique2,
+  unique3, unique4, unique5, unique6, unique7, unique8, unique9,
 }
 use test_kit/fuzzy/fuzzer.{data_fuzzer}
 
@@ -304,5 +306,81 @@ fn prop_tuple2_to_tuple9() -> Fuzzer<Bool> {
 }
 
 test testing_all_tuple_fuzzers(match via prop_tuple2_to_tuple9()) {
+  match
+}
+
+// ## Unique Fuzzers
+
+fn prop_unique() -> Fuzzer<Bool> {
+  let count <- fuzz.and_then(fuzz.int_between(10, 20))
+  let data <- fuzz.and_then(unique(data_fuzzer(), count))
+  fuzz.constant(( data |> list.unique |> list.length ) == count)
+}
+
+fn prop_unique2() -> Fuzzer<Bool> {
+  let (a, b) <- fuzz.map(unique2(data_fuzzer()))
+  ( [a, b] |> list.unique |> list.length ) == 2
+}
+
+fn prop_unique3() -> Fuzzer<Bool> {
+  let (a, b, c) <- fuzz.map(unique3(data_fuzzer()))
+  ( [a, b, c] |> list.unique |> list.length ) == 3
+}
+
+fn prop_unique4() -> Fuzzer<Bool> {
+  let (a, b, c, d) <- fuzz.map(unique4(data_fuzzer()))
+  ( [a, b, c, d] |> list.unique |> list.length ) == 4
+}
+
+fn prop_unique5() -> Fuzzer<Bool> {
+  let (a, b, c, d, e) <- fuzz.map(unique5(data_fuzzer()))
+  ( [a, b, c, d, e] |> list.unique |> list.length ) == 5
+}
+
+fn prop_unique6() -> Fuzzer<Bool> {
+  let (a, b, c, d, e, f) <- fuzz.map(unique6(data_fuzzer()))
+  ( [a, b, c, d, e, f] |> list.unique |> list.length ) == 6
+}
+
+fn prop_unique7() -> Fuzzer<Bool> {
+  let (a, b, c, d, e, f, g) <- fuzz.map(unique7(data_fuzzer()))
+  ( [a, b, c, d, e, f, g] |> list.unique |> list.length ) == 7
+}
+
+fn prop_unique8() -> Fuzzer<Bool> {
+  let (a, b, c, d, e, f, g, h) <- fuzz.map(unique8(data_fuzzer()))
+  ( [a, b, c, d, e, f, g, h] |> list.unique |> list.length ) == 8
+}
+
+fn prop_unique9() -> Fuzzer<Bool> {
+  let (a, b, c, d, e, f, g, h, i) <- fuzz.map(unique9(data_fuzzer()))
+  ( [a, b, c, d, e, f, g, h, i] |> list.unique |> list.length ) == 9
+}
+
+fn prop_unique_to_unique9() -> Fuzzer<Bool> {
+  let unique_length <- fuzz.and_then(prop_unique())
+  let unique_length2 <- fuzz.and_then(prop_unique2())
+  let unique_length3 <- fuzz.and_then(prop_unique3())
+  let unique_length4 <- fuzz.and_then(prop_unique4())
+  let unique_length5 <- fuzz.and_then(prop_unique5())
+  let unique_length6 <- fuzz.and_then(prop_unique6())
+  let unique_length7 <- fuzz.and_then(prop_unique7())
+  let unique_length8 <- fuzz.and_then(prop_unique8())
+  let unique_length9 <- fuzz.and_then(prop_unique9())
+
+  fuzz.constant(and {
+      unique_length,
+      unique_length2,
+      unique_length3,
+      unique_length4,
+      unique_length5,
+      unique_length6,
+      unique_length7,
+      unique_length8,
+      unique_length9,
+    })
+}
+
+test testing_unique_fuzzers(match via prop_unique_to_unique9()) {
   match
 }

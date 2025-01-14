@@ -120,13 +120,13 @@
       <h2>
         <a href="./">test_kit</a>
         <span id="project-version">
-          <span>hydrogen-α </span>
+          <span>helium-α </span>
         </span>
         <script>
           "use strict";
 
           if ("undefined" !== typeof versionNodes) {
-            const currentVersion = "vhydrogen-α";
+            const currentVersion = "vhelium-α";
             if (! versionNodes.find(element => element.version === currentVersion)) {
               versionNodes.unshift({ version: currentVersion, url: "#" });
             }
@@ -272,21 +272,21 @@
 <p>This library contains a set of tools, mainly for testing purposes:</p>
 <ul>
 <li><a href="#print"><code>print</code></a> (pretty-print data with label)</li>
+<li><a href="#to_data"><code>to_data</code></a> (upcast any serialisable type to <code>Data</code>)</li>
 <li><a href="#collections"><code>collections</code></a> (contains some <code>list</code> and <code>zip3</code> functions)</li>
 <li><a href="#fuzzy"><code>fuzzy</code></a> (<code>address</code>, <code>assets</code>, <code>certificate</code>, <code>governance</code>, and <code>transaction</code> fuzzers)</li>
 <li><a href="#time"><code>time</code></a> (to <code>add</code>/<code>subtract</code> intervals and unwrapping finite time, taking its inclusivity into account)</li>
 <li><a href="#tx"><code>tx</code></a> (helps mocking and constructing transaction data using the <code>transaction</code> builder)</li>
 </ul>
 <table><thead><tr><th>ℹ️</th><th>Package info</th><th>aiken-extra/test_kit</th><th>🧰</th></tr></thead><tbody>
-<tr><td>🔴</td><td><strong>Version</strong></td><td><strong>v0.0.1</strong></td><td>🛠️</td></tr>
-<tr><td>🔴</td><td><strong>Codename</strong></td><td><strong>hydrogen</strong></td><td>💧</td></tr>
+<tr><td>🔴</td><td><strong>Version</strong></td><td><strong>v0.0.2</strong></td><td>🛠️</td></tr>
+<tr><td>🔴</td><td><strong>Codename</strong></td><td><strong>helium</strong></td><td>🔥</td></tr>
 <tr><td>🔴</td><td><strong>Status</strong></td><td><strong>alpha</strong></td><td>🧪</td></tr>
 <tr><td>🟢</td><td><strong>Depends on</strong></td><td><a href="https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0"><strong>aiken-lang/fuzz v2.1.0</strong></a></td><td>✅</td></tr>
 <tr><td>🟢</td><td><strong>Depends on</strong></td><td><a href="https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0"><strong>aiken-lang/stdlib v2.2.0</strong></a></td><td>✅</td></tr>
 <tr><td>🟢</td><td><strong>Tested with</strong></td><td><a href="https://github.com/aiken-lang/aiken/releases/tag/v1.1.9"><strong>aiken v1.1.9</strong></a></td><td>✅</td></tr>
 </tbody></table>
 <!-- | 🟢  | **Version**     | **boron**                                                                                | ✅  | -->
-<!-- | 🔴  | **Codename**    | **helium**                                                                               | 🔥  | -->
 <!-- | 🟡  | **Codename**    | **lithium**                                                                              | ☄️  | -->
 <!-- | 🟡  | **Codename**    | **beryllium**                                                                            | ☄️  | -->
 <!-- | 🟡  | **Status**      | **beta**                                                                                 | ⚗️  | -->
@@ -298,6 +298,12 @@ print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
 </code></pre>
 <p>By calling <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label"><code>fuzz.label</code></a> internally,
 <code>print</code> will also work with property testing.</p>
+<h2><code>to_data</code></h2>
+<p>Upcast any serialisable type to <code>Data</code>:</p>
+<pre><code class="language-aiken">use test_kit.{to_data}
+
+any |&gt; to_data // let data: Data = any
+</code></pre>
 <h2><code>collections</code></h2>
 <p>Zip3:</p>
 <pre><code class="language-aiken">use test_kit/collections
@@ -314,12 +320,16 @@ collections.unzip3(list_abc) // -&gt; ([a..], [b..], [c..])
 [..bools] |&gt; logic.any_false // -&gt; True | False
 </code></pre>
 <h2><code>fuzzy</code></h2>
-<p>Tuple fuzzer:</p>
+<p>Tuple and unique fuzzers:</p>
 <pre><code class="language-aiken">use test_kit/fuzzy
 
+// A convenient way of generating tuples instead of doing map:
 test prop_tuple((a, b) via fuzzy.tuple(fuzzer_a, fuzzer_b)) { .. }
-
 // also available: tuple3 to tuple9
+
+// Generates 3 unique elements from the given fuzzer:
+test prop_unique((x1, x2, x3) via fuzzy.unique3(fuzzer_x)) { .. }
+// other element counts are also available
 </code></pre>
 <p>Transaction data fuzzers:</p>
 <pre><code class="language-aiken">use test_kit/fuzzy/fuzzer.{ .. }
@@ -521,9 +531,9 @@ mock_hash(1, size: 2)                    // #"0001"
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="./js/lunr.min.js?v=1.1.9"></script>
-    <script src="./js/index.js?v=1736322070"></script>
+    <script src="./js/index.js?v=1736788049"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="./search-data.js?v=1736322070"></script>
+    <script src="./search-data.js?v=1736788049"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {

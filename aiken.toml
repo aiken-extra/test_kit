@@ -1,5 +1,5 @@
 name = "aiken-extra/test_kit"
-version = "hydrogen-α"
+version = "helium-α"
 compiler = "v1.1.9"
 plutus = "v3"
 license = "Apache-2.0"
