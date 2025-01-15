@@ -7,9 +7,9 @@ pub type Any =
   Data
 
 /// A convenient way of upcasting any serialisable type to `Data`
-/// instead of doing `let data: Data = any`
-pub fn to_data(any: Any) -> Data {
-  let data: Data = any
+/// instead of doing `let data: Data = from`
+pub fn to_data(from: Any) -> Data {
+  let data: Data = from
   data
 }
 
