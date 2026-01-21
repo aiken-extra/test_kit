@@ -1,6 +1,6 @@
 name = "aiken-extra/test_kit"
-version = "helium-α"
-compiler = "v1.1.9"
+version = "lithium-β"
+compiler = "1.1.21"
 plutus = "v3"
 license = "Apache-2.0"
 description = "An Aiken utility library containing various tools, mainly for testing purposes"
@@ -12,12 +12,13 @@ platform = "github"
 
 [[dependencies]]
 name = "aiken-lang/stdlib"
-version = "v2.2.0"
+version = "3.0.0"
 source = "github"
 
 [[dependencies]]
 name = "aiken-lang/fuzz"
-version = "v2.1.0"
+version = "2.2.0"
 source = "github"
 
-[config]
+[config.default]
+now = 1768998897000

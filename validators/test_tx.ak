@@ -1,30 +1,30 @@
 //// @hidden
 //// ```
 //// Aiken v1.1.9:
-//// │ PASS [mem: 319256, cpu: 101509111] testing_add_tx_input
-//// │ PASS [mem:   5758, cpu:   3871674] testing_new_tx_input
-//// │ PASS [mem: 249993, cpu:  75428685] testing_with_asset_of_tx_input
-//// │ PASS [mem:  16986, cpu:   8026995] testing_set_datum_of_tx_input
-//// │ PASS [mem:  18746, cpu:   8300359] testing_attach_ref_script_to_tx_input
-//// │ PASS [mem: 323908, cpu: 103071962] testing_add_tx_ref_input
-//// │ PASS [mem: 292696, cpu:  90712644] testing_add_tx_output
-//// │ PASS [mem:   4462, cpu:   2939940] testing_new_tx_output
-//// │ PASS [mem: 229309, cpu:  67212512] testing_add_asset_to_tx_output
-//// │ PASS [mem:  11474, cpu:   5572388] testing_set_datum_of_tx_output
-//// │ PASS [mem:  13234, cpu:   5845752] testing_attach_ref_script_to_tx_output
-//// │ PASS [mem:  13898, cpu:   7792922] testing_set_fee
-//// │ PASS [mem: 430056, cpu: 127572571] testing_add_mint
-//// │ PASS [mem:  29018, cpu:  13684644] testing_add_certificate
-//// │ PASS [mem: 471462, cpu: 201318051] testing_add_withdrawal
-//// │ PASS [mem:  27823, cpu:  12395029] testing_set_validity_range
-//// │ PASS [mem:  53338, cpu:  21394177] testing_add_signatory
-//// │ PASS [mem: 331752, cpu: 130766929] testing_add_redeemer
-//// │ PASS [mem: 180850, cpu:  60814114] testing_add_datum
-//// │ PASS [mem:  33034, cpu:  14349164] testing_set_id
-//// │ PASS [mem: 144662, cpu:  60184550] testing_add_vote
-//// │ PASS [mem: 118722, cpu:  44746182] testing_add_proposal_procedure
-//// │ PASS [mem:  41638, cpu:  17416193] testing_set_current_treasury_amount
-//// │ PASS [mem:  42502, cpu:  17691891] testing_set_treasury_donation
+//// │ PASS [mem: 301.83 K, cpu:  98.11 M] testing_add_tx_input
+//// │ PASS [mem:   5.25 K, cpu:   3.79 M] testing_new_tx_input
+//// │ PASS [mem: 233.86 K, cpu:  72.24 M] testing_with_asset_of_tx_input
+//// │ PASS [mem:  16.28 K, cpu:   7.91 M] testing_set_datum_of_tx_input
+//// │ PASS [mem:  18.04 K, cpu:   8.18 M] testing_attach_ref_script_to_tx_input
+//// │ PASS [mem: 306.48 K, cpu:  99.68 M] testing_add_tx_ref_input
+//// │ PASS [mem: 275.27 K, cpu:  87.32 M] testing_add_tx_output
+//// │ PASS [mem:   3.96 K, cpu:   2.85 M] testing_new_tx_output
+//// │ PASS [mem: 213.18 K, cpu:  64.02 M] testing_add_asset_to_tx_output
+//// │ PASS [mem:  10.87 K, cpu:   5.47 M] testing_set_datum_of_tx_output
+//// │ PASS [mem:  12.63 K, cpu:   5.74 M] testing_attach_ref_script_to_tx_output
+//// │ PASS [mem:  13.19 K, cpu:   7.68 M] testing_set_fee
+//// │ PASS [mem:  391.5 K, cpu: 117.78 M] testing_add_mint
+//// │ PASS [mem:  28.01 K, cpu:  13.52 M] testing_add_certificate
+//// │ PASS [mem: 432.37 K, cpu: 191.57 M] testing_add_withdrawal
+//// │ PASS [mem:  27.12 K, cpu:  12.28 M] testing_set_validity_range
+//// │ PASS [mem:  52.23 K, cpu:  21.21 M] testing_add_signatory
+//// │ PASS [mem: 309.48 K, cpu: 125.47 M] testing_add_redeemer
+//// │ PASS [mem: 170.95 K, cpu:  59.23 M] testing_add_datum
+//// │ PASS [mem:  32.33 K, cpu:  14.23 M] testing_set_id
+//// │ PASS [mem: 137.74 K, cpu:  58.35 M] testing_add_vote
+//// │ PASS [mem: 116.52 K, cpu:  44.39 M] testing_add_proposal_procedure
+//// │ PASS [mem:  40.93 K, cpu:  17.30 M] testing_set_current_treasury_amount
+//// │ PASS [mem:  41.80 K, cpu:  17.57 M] testing_set_treasury_donation
 //// ```
 
 use aiken/builtin.{b_data}
@@ -555,11 +555,13 @@ test testing_add_mint() {
     }
 
   let txn_new =
-    transaction.placeholder // Partially mint `${PolicyId1}${Token1}`:
+    transaction.placeholder
+      // Partially mint `${PolicyId1}${Token1}`:
       |> add_mint(from_asset("PolicyId1", "Token1", 500))
       |> add_mint(from_asset("PolicyId2", "Token1", 30))
       |> add_mint(from_asset("PolicyId1", "Token2", 200))
-      |> add_mint(from_asset("PolicyId2", "Token2", 4)) // Partially mint `${PolicyId1}${Token1}`:
+      |> add_mint(from_asset("PolicyId2", "Token2", 4))
+      // Partially mint `${PolicyId1}${Token1}`:
       |> add_mint(from_asset("PolicyId1", "Token1", 250))
       |> add_mint(from_asset("PolicyId1", "Token1", 250))
 
@@ -616,7 +618,8 @@ test testing_add_withdrawal() {
     }
 
   let txn_new =
-    transaction.placeholder // Add withdrawals in any order with partial amount:
+    transaction.placeholder
+      // Add withdrawals in any order with partial amount:
       |> add_withdrawal(address.Script("b"), 1)
       |> add_withdrawal(address.VerificationKey("e"), 5)
       |> add_withdrawal(address.Script("a"), 1)
@@ -640,8 +643,7 @@ test testing_set_validity_range() {
   // Arrange:
   let validity_range = after(10)
 
-  let txn_raw =
-    Transaction { ..transaction.placeholder, validity_range: validity_range }
+  let txn_raw = Transaction { ..transaction.placeholder, validity_range }
   let txn_new = transaction.placeholder |> set_validity_range(validity_range)
 
   // Trace:
@@ -667,8 +669,12 @@ test testing_add_signatory() {
   let txn_new =
     // The order will be preserved as is:
     transaction.placeholder
-      |> add_signatory(#"00000000000000000000000000000000000000000000000000000001")
-      |> add_signatory(#"00000000000000000000000000000000000000000000000000000002")
+      |> add_signatory(
+          #"00000000000000000000000000000000000000000000000000000001",
+        )
+      |> add_signatory(
+          #"00000000000000000000000000000000000000000000000000000002",
+        )
 
   // Trace:
   //   trace @"txn_raw": txn_raw
@@ -715,7 +721,8 @@ test testing_add_redeemer() {
     }
 
   let txn_new =
-    transaction.placeholder // Add redeemers with script purpose in any order:
+    transaction.placeholder
+      // Add redeemers with script purpose in any order:
       |> add_redeemer(script_purpose_1, redeemer)
       |> add_redeemer(script_purpose_3, redeemer)
       |> add_redeemer(script_purpose_5, redeemer)
@@ -747,7 +754,8 @@ test testing_add_datum() {
     }
 
   let txn_new =
-    transaction.placeholder // Add datums with data hash in any order:
+    transaction.placeholder
+      // Add datums with data hash in any order:
       |> add_datum("DataHash1", datum)
       |> add_datum("DataHash3", datum)
       |> add_datum("DataHash4", datum)
@@ -796,7 +804,8 @@ test testing_add_vote() {
     }
 
   let txn_new =
-    transaction.placeholder // Add votes with voter in any order:
+    transaction.placeholder
+      // Add votes with voter in any order:
       |> add_vote(voter_1, [vote_2])
       |> add_vote(voter_3, [vote_1, vote_2, vote_3])
       |> add_vote(voter_2, [vote_1, vote_3])
@@ -833,7 +842,8 @@ test testing_add_proposal_procedure() {
     }
 
   let txn_new =
-    transaction.placeholder // The order will be preserved as is:
+    transaction.placeholder
+      // The order will be preserved as is:
       |> add_proposal_procedure(0, script_1, NicePoll)
       |> add_proposal_procedure(1, script_2, NicePoll)
       |> add_proposal_procedure(2, script_3, NicePoll)

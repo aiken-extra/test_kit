@@ -1,15 +1,12 @@
 //// @hidden
 //// ```
-//// Aiken v1.1.9:
-//// │ PASS [mem:   54120, cpu:   15892511] testing_mock_hash
-//// │ PASS [mem:   25377, cpu:    6056546] testing_mock_hash_from_bytearray
-//// │ PASS [mem:  367537, cpu:  113444262] testing_mock_hash_from_int
-//// │ PASS [mem: 4184429, cpu: 1257419981] testing_mock_blake2b_224
-//// │ PASS [mem: 4887939, cpu: 1470040349] testing_mock_blake2b_256
-//// │ PASS [mem:  405535, cpu:  153981445] testing_mock_address
-//// │ PASS [after 100 tests] testing_mock_credential
-//// │ PASS [after 100 tests] testing_mock_asset
-//// │ PASS [after 100 tests] testing_mock_output_reference
+//// Aiken v1.1.21:
+//// │ PASS [mem:  49.72 K, cpu:  15.18 M] testing_mock_hash
+//// │ PASS [mem:  24.07 K, cpu:   5.84 M] testing_mock_hash_from_bytearray
+//// │ PASS [mem: 344.43 K, cpu: 109.74 M] testing_mock_hash_from_int
+//// │ PASS [mem:   3.91 M, cpu:   1.21 B] testing_mock_blake2b_224
+//// │ PASS [mem:   4.56 M, cpu:   1.41 B] testing_mock_blake2b_256
+//// │ PASS [mem: 374.03 K, cpu: 148.94 M] testing_mock_address
 //// ```
 
 use aiken/collection/list

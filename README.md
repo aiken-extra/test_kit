@@ -3,7 +3,6 @@
 This library contains a set of tools, mainly for testing purposes:
 
 - [`print`](#print) (pretty-print data with label)
-- [`to_data`](#to_data) (upcast any serialisable type to `Data`)
 - [`collections`](#collections) (contains some `list` and `zip3` functions)
 - [`fuzzy`](#fuzzy) (`address`, `assets`, `certificate`, `governance`, and `transaction` fuzzers)
 - [`time`](#time) (to `add`/`subtract` intervals and unwrapping finite time, taking its inclusivity into account)
@@ -11,25 +10,24 @@ This library contains a set of tools, mainly for testing purposes:
 
 | ℹ️  | Package info    | aiken-extra/test_kit                                                                     | 🧰  |
 | --- | --------------- | ---------------------------------------------------------------------------------------- | --- |
-| 🔴  | **Version**     | **v0.0.2**                                                                               | 🛠️  |
-| 🔴  | **Codename**    | **helium**                                                                               | 🔥  |
-| 🔴  | **Status**      | **alpha**                                                                                | 🧪  |
-| 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.1.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0)     | ✅  |
-| 🟢  | **Depends on**  | [**aiken-lang/stdlib v2.2.0**](https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0) | ✅  |
-| 🟢  | **Tested with** | [**aiken v1.1.9**](https://github.com/aiken-lang/aiken/releases/tag/v1.1.9)              | ✅  |
+| 🟡  | **Version**     | **v0.1.0**                                                                               | 🛠️  |
+| 🟡  | **Codename**    | **lithium**                                                                              | ☄️  |
+| 🟡  | **Status**      | **beta**                                                                                 | ⚗️  |
+| 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.2.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0)     | ✅  |
+| 🟢  | **Depends on**  | [**aiken-lang/stdlib v3.0.0**](https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0) | ✅  |
+| 🟢  | **Tested with** | [**aiken v1.1.21**](https://github.com/aiken-lang/aiken/releases/tag/v1.1.9)             | ✅  |
 
 <!-- | 🟢  | **Version**     | **boron**                                                                                | ✅  | -->
 
-<!-- | 🟡  | **Codename**    | **lithium**                                                                              | ☄️  | -->
+<!-- | 🟡  | **Version**     | **v0.1.1**                                                                               | 🛠️  | -->
 <!-- | 🟡  | **Codename**    | **beryllium**                                                                            | ☄️  | -->
-
 <!-- | 🟡  | **Status**      | **beta**                                                                                 | ⚗️  | -->
 
 ## `print`
 
 Pretty-print data with label:
 
-```gleam
+```aiken
 use test_kit.{print}
 
 print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
@@ -38,21 +36,11 @@ print("Label", data) // fuzz.label(@"Label: cbor.diagnostic(data)")
 By calling [`fuzz.label`](https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label) internally,
 `print` will also work with property testing.
 
-## `to_data`
-
-Upcast any serialisable type to `Data`:
-
-```gleam
-use test_kit.{to_data}
-
-any |> to_data // let data: Data = any
-```
-
 ## `collections`
 
 Zip3:
 
-```gleam
+```aiken
 use test_kit/collections
 
 collections.zip3(list_a, list_b, list_c) // -> [(a, b, c)..]
@@ -61,7 +49,7 @@ collections.unzip3(list_abc) // -> ([a..], [b..], [c..])
 
 List `and` & `or`:
 
-```gleam
+```aiken
 use test_kit/collections/logic
 
 [..bools] |> logic.all_true  // -> True | False
@@ -72,14 +60,10 @@ use test_kit/collections/logic
 
 ## `fuzzy`
 
-Tuple and unique fuzzers:
+Unique fuzzers:
 
-```gleam
+```aiken
 use test_kit/fuzzy
-
-// A convenient way of generating tuples instead of doing map:
-test prop_tuple((a, b) via fuzzy.tuple(fuzzer_a, fuzzer_b)) { .. }
-// also available: tuple3 to tuple9
 
 // Generates 3 unique elements from the given fuzzer:
 test prop_unique((x1, x2, x3) via fuzzy.unique3(fuzzer_x)) { .. }
@@ -88,7 +72,7 @@ test prop_unique((x1, x2, x3) via fuzzy.unique3(fuzzer_x)) { .. }
 
 Transaction data fuzzers:
 
-```gleam
+```aiken
 use test_kit/fuzzy/fuzzer.{ .. }
 
 test prop_address(address via address_fuzzer(FromFuzzed, WithFuzzedDelegation)) { .. } // random addresses
@@ -106,7 +90,7 @@ test prop_transaction(inputs via user_inputs_fuzzer()) { .. } // simple (non-scr
 
 Interval additions and subtractions:
 
-```gleam
+```aiken
 use test_kit/time.{ .. }
 
 interval.after(25200000)  |> add_interval(lower_bound: 6 |> Minute, upper_bound: 5 |> Hour) // == interval.after(25200000 + 6 * 60 * 1_000)
@@ -122,7 +106,7 @@ interval.between(4, 5000) |> sub_interval(lower_bound: 2 |> MS, upper_bound: 1 |
 
 Unwrapping finite time:
 
-```gleam
+```aiken
 use test_kit/time/unwrap
 
 unwrap.finite_start_of(interval) // -> PosixTime
@@ -135,7 +119,7 @@ unwrap.finite_end_of(interval)   // -> PosixTime
 
 Constructing transaction data:
 
-```gleam
+```aiken
 use test_kit/tx.{ .. }
 
 test validate_something() {
@@ -155,7 +139,7 @@ test validate_something() {
 
 Mocking transaction data:
 
-```gleam
+```aiken
 use test_kit/tx/mock.{ .. }
 
 mock_address(from_payment: 1, from_stake: 2)

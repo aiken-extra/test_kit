@@ -8,6 +8,6 @@ pub const positive_infinity = PositiveInfinity
 
 pub const negative_infinity = NegativeInfinity
 
-pub fn to_finite(time: PosixTime) -> IntervalBoundType<PosixTime> {
+pub fn to_finite(time: PosixTime) -> IntervalBoundType {
   interval.Finite(time)
 }

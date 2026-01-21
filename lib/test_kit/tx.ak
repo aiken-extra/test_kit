@@ -71,7 +71,7 @@ use cardano/transaction/script_purpose
 /// Set `Transaction.id`.
 /// The default value is `#"0000000000000000000000000000000000000000000000000000000000000000"`
 pub fn set_id(tx: Transaction, id: TransactionId) -> Transaction {
-  Transaction { ..tx, id: id }
+  Transaction { ..tx, id }
 }
 
 /// Set `Transaction.validity_range`.
@@ -80,13 +80,13 @@ pub fn set_validity_range(
   tx: Transaction,
   validity_range: ValidityRange,
 ) -> Transaction {
-  Transaction { ..tx, validity_range: validity_range }
+  Transaction { ..tx, validity_range }
 }
 
 /// Set `Transaction.fee`.
 /// The default value is `0`
 pub fn set_fee(tx: Transaction, fee: assets.Lovelace) -> Transaction {
-  Transaction { ..tx, fee: fee }
+  Transaction { ..tx, fee }
 }
 
 // ## Add Transaction Input
@@ -171,7 +171,7 @@ pub fn set_datum_of_tx_input(
 ) -> transaction.Input {
   transaction.Input {
     ..input,
-    output: transaction.Output { ..input.output, datum: datum },
+    output: transaction.Output { ..input.output, datum },
   }
 }
 
@@ -304,7 +304,7 @@ pub fn set_datum_of_tx_output(
   output: transaction.Output,
   datum: transaction.Datum,
 ) -> transaction.Output {
-  transaction.Output { ..output, datum: datum }
+  transaction.Output { ..output, datum }
 }
 
 /// Attach a reference script to a transaction output.

@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)"/>
     <meta name="theme-color" content="#1e1e2e" media="(prefers-color-scheme: dark)"/>
     <link rel="icon" type="image/svg+xml" sizes="any" href="../favicon.svg"/>
-    <link rel="stylesheet" href="../css/index.css?v=1.1.9" type="text/css"/>
-    <link id="syntax-theme" rel="stylesheet" href="../css/atom-one-light.min.css?v=1.1.9"/>
+    <link rel="stylesheet" href="../css/index.css?v=1.1.21" type="text/css"/>
+    <link id="syntax-theme" rel="stylesheet" href="../css/atom-one-light.min.css?v=1.1.21"/>
   </head>
   <body class="prewrap-off theme-light drawer-closed">
     <script>
@@ -120,13 +120,13 @@
       <h2>
         <a href="../">test_kit</a>
         <span id="project-version">
-          <span>helium-α </span>
+          <span>lithium-β </span>
         </span>
         <script>
           "use strict";
 
           if ("undefined" !== typeof versionNodes) {
-            const currentVersion = "vhelium-α";
+            const currentVersion = "vlithium-β";
             if (! versionNodes.find(element => element.version === currentVersion)) {
               versionNodes.unshift({ version: currentVersion, url: "#" });
             }
@@ -269,6 +269,14 @@
         
 	  
 	    
+	      <li data-indent="0"><a href="../config.html">
+	      config
+	      </a></li>
+	    
+	  
+        
+	  
+	    
 	      <li data-indent="0"><a href="../test_kit.html">
 	      test_kit
 	      </a></li>
@@ -392,7 +400,7 @@ trace config.now
         </a>
       </h2>
       
-        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L48-L49"></a>
+        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L48-L49"></a>
       
     </div>
     <div class="custom-type-constructors">
@@ -418,7 +426,7 @@ after being removed in <a href="https://github.com/aiken-lang/stdlib/releases/ta
         </a>
       </h2>
       
-        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L51-L68"></a>
+        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L51-L68"></a>
       
     </div>
     <div class="custom-type-constructors">
@@ -541,7 +549,7 @@ after being removed in <a href="https://github.com/aiken-lang/stdlib/releases/ta
         <div class="member-name">
           <h2 id="add_time"><pre class="hljs language-aiken">add_time(self: PosixTime, time: TimeUnit) -&gt; PosixTime</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L120-L122"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L120-L122"></a>
           
         </div>
         <div class="rendered-markdown"><p>Adds time to a <a href="#PosixTime"><code>PosixTime</code></a>. For example:</p>
@@ -578,7 +586,7 @@ after being removed in <a href="https://github.com/aiken-lang/stdlib/releases/ta
         <div class="member-name">
           <h2 id="sub_time"><pre class="hljs language-aiken">sub_time(self: PosixTime, time: TimeUnit) -&gt; PosixTime</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L150-L152"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L150-L152"></a>
           
         </div>
         <div class="rendered-markdown"><p>Subtracts time from a <a href="#PosixTime"><code>PosixTime</code></a>. For example:</p>
@@ -620,12 +628,12 @@ after being removed in <a href="https://github.com/aiken-lang/stdlib/releases/ta
       <div class="member">
         <div class="member-name">
           <h2 id="add_interval"><pre class="hljs language-aiken">add_interval(
-  self: Interval&lt;PosixTime&gt;,
+  self: Interval,
   lower_bound: TimeUnit,
   upper_bound: TimeUnit,
-) -&gt; Interval&lt;PosixTime&gt;</pre></h2>
+) -&gt; Interval</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L194-L200"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L194-L200"></a>
           
         </div>
         <div class="rendered-markdown"><p>Adds time to an <code>Interval</code>. For example:</p>
@@ -661,12 +669,12 @@ interval.between(4, 5000)
       <div class="member">
         <div class="member-name">
           <h2 id="sub_interval"><pre class="hljs language-aiken">sub_interval(
-  self: Interval&lt;PosixTime&gt;,
+  self: Interval,
   lower_bound: TimeUnit,
   upper_bound: TimeUnit,
-) -&gt; Interval&lt;PosixTime&gt;</pre></h2>
+) -&gt; Interval</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L228-L234"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L228-L234"></a>
           
         </div>
         <div class="rendered-markdown"><p>Subtracts time from an <code>Interval</code>. For example:</p>
@@ -707,12 +715,9 @@ interval.between(4, 5000)
   
       <div class="member">
         <div class="member-name">
-          <h2 id="add_bound"><pre class="hljs language-aiken">add_bound(
-  self: IntervalBound&lt;PosixTime&gt;,
-  bound: TimeUnit,
-) -&gt; IntervalBound&lt;PosixTime&gt;</pre></h2>
+          <h2 id="add_bound"><pre class="hljs language-aiken">add_bound(self: IntervalBound, bound: TimeUnit) -&gt; IntervalBound</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L273-L278"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L272-L274"></a>
           
         </div>
         <div class="rendered-markdown"><p>Adds time to an <code>IntervalBound</code>. For example:</p>
@@ -747,12 +752,9 @@ interval.between(4, 5000).upper_bound
   
       <div class="member">
         <div class="member-name">
-          <h2 id="sub_bound"><pre class="hljs language-aiken">sub_bound(
-  self: IntervalBound&lt;PosixTime&gt;,
-  bound: TimeUnit,
-) -&gt; IntervalBound&lt;PosixTime&gt;</pre></h2>
+          <h2 id="sub_bound"><pre class="hljs language-aiken">sub_bound(self: IntervalBound, bound: TimeUnit) -&gt; IntervalBound</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L306-L311"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L302-L304"></a>
           
         </div>
         <div class="rendered-markdown"><p>Subtracts time from an <code>IntervalBound</code>. For example:</p>
@@ -793,12 +795,9 @@ interval.between(4, 5000).upper_bound
   
       <div class="member">
         <div class="member-name">
-          <h2 id="add_finite"><pre class="hljs language-aiken">add_finite(
-  self: IntervalBoundType&lt;PosixTime&gt;,
-  finite: TimeUnit,
-) -&gt; IntervalBoundType&lt;PosixTime&gt;</pre></h2>
+          <h2 id="add_finite"><pre class="hljs language-aiken">add_finite(self: IntervalBoundType, finite: TimeUnit) -&gt; IntervalBoundType</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L353-L358"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L346-L351"></a>
           
         </div>
         <div class="rendered-markdown"><p>Adds time to a <a href="https://aiken-lang.github.io/stdlib/aiken/interval.html#IntervalBoundType">finite</a>
@@ -834,12 +833,9 @@ interval.between(4, 5000).upper_bound.bound_type
   
       <div class="member">
         <div class="member-name">
-          <h2 id="sub_finite"><pre class="hljs language-aiken">sub_finite(
-  self: IntervalBoundType&lt;PosixTime&gt;,
-  finite: TimeUnit,
-) -&gt; IntervalBoundType&lt;PosixTime&gt;</pre></h2>
+          <h2 id="sub_finite"><pre class="hljs language-aiken">sub_finite(self: IntervalBoundType, finite: TimeUnit) -&gt; IntervalBoundType</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/time.ak#L387-L392"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/time.ak#L380-L385"></a>
           
         </div>
         <div class="rendered-markdown"><p>Subtracts time from a <a href="https://aiken-lang.github.io/stdlib/aiken/interval.html#IntervalBoundType">finite</a>
@@ -950,8 +946,8 @@ interval.between(4, 5000).upper_bound.bound_type
       </defs>
     </svg>
 
-    <script src="../js/highlight.min.js?v=1.1.9"></script>
-    <script src="../js/highlightjs-aiken.js?v=1.1.9"></script>
+    <script src="../js/highlight.min.js?v=1.1.21"></script>
+    <script src="../js/highlightjs-aiken.js?v=1.1.21"></script>
     <script>
       document.querySelectorAll("pre code").forEach((elem) => {
         if (elem.className === "") {
@@ -993,10 +989,10 @@ interval.between(4, 5000).upper_bound.bound_type
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="../js/lunr.min.js?v=1.1.9"></script>
-    <script src="../js/index.js?v=1736788049"></script>
+    <script src="../js/lunr.min.js?v=1.1.21"></script>
+    <script src="../js/index.js?v=1768998915"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="../search-data.js?v=1736788049"></script>
+    <script src="../search-data.js?v=1768998915"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {

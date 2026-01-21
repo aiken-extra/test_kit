@@ -1,10 +1,10 @@
 //// @hidden
 //// ```
 //// Aiken v1.1.9:
-//// │ PASS [mem:  30377, cpu:  8161595] testing_list_and
-//// │ PASS [mem:  29117, cpu:  7545021] testing_list_or
-//// │ PASS [mem:  95047, cpu: 33200860] testing_zip3
-//// │ PASS [mem: 112579, cpu: 43284882] testing_unzip3
+//// │ PASS [mem:  25.34 K, cpu:   7.27 M] testing_list_and
+//// │ PASS [mem:  23.55 K, cpu:   6.50 M] testing_list_or
+//// │ PASS [mem:  71.35 K, cpu:  28.74 M] testing_zip3
+//// │ PASS [mem: 109.87 K, cpu:  42.85 M] testing_unzip3
 //// ```
 
 use test_kit/collections.{list_and, list_or, unzip3, zip3}

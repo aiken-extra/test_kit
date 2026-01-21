@@ -7,10 +7,10 @@ use test_kit/time.{PosixTime}
 /// Returns the **normalized lower-bound** `Posixtime` of an `interval`
 /// > [!WARNING]
 /// > Will panic if `lower_bound` is not `Finite`
-pub fn finite_start_of(interval: Interval<PosixTime>) -> PosixTime {
+pub fn finite_start_of(interval: Interval) -> PosixTime {
   let bound = interval.lower_bound
 
-  expect Finite(time): IntervalBoundType<PosixTime> = bound.bound_type
+  expect Finite(time): IntervalBoundType = bound.bound_type
 
   if bound.is_inclusive {
     time
@@ -22,10 +22,10 @@ pub fn finite_start_of(interval: Interval<PosixTime>) -> PosixTime {
 /// Returns the **normalized upper-bound** `PosixTime` of an `interval`
 /// > [!WARNING]
 /// > Will panic if `upper_bound` is not `Finite`
-pub fn finite_end_of(interval: Interval<PosixTime>) -> PosixTime {
+pub fn finite_end_of(interval: Interval) -> PosixTime {
   let bound = interval.upper_bound
 
-  expect Finite(time): IntervalBoundType<PosixTime> = bound.bound_type
+  expect Finite(time): IntervalBoundType = bound.bound_type
 
   if bound.is_inclusive {
     time

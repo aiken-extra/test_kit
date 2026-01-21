@@ -154,11 +154,11 @@ pub fn sub_time(self: PosixTime, time: TimeUnit) -> PosixTime {
 // ## Interval
 
 fn opr_interval(
-  self: Interval<PosixTime>,
+  self: Interval,
   lower_bound: TimeUnit,
   upper_bound: TimeUnit,
-  opr: fn(IntervalBound<PosixTime>, TimeUnit) -> IntervalBound<PosixTime>,
-) -> Interval<PosixTime> {
+  opr: fn(IntervalBound, TimeUnit) -> IntervalBound,
+) -> Interval {
   Interval {
     lower_bound: self.lower_bound |> opr(lower_bound),
     upper_bound: self.upper_bound |> opr(upper_bound),
@@ -192,10 +192,10 @@ fn opr_interval(
 /// // == interval.between(4 + 2, 5000 + 1 * 10)
 /// ```
 pub fn add_interval(
-  self: Interval<PosixTime>,
+  self: Interval,
   lower_bound: TimeUnit,
   upper_bound: TimeUnit,
-) -> Interval<PosixTime> {
+) -> Interval {
   self |> opr_interval(lower_bound, upper_bound, add_bound)
 }
 
@@ -226,21 +226,20 @@ pub fn add_interval(
 /// // == interval.between(4 - 2, 5000 - 1 * 10)
 /// ```
 pub fn sub_interval(
-  self: Interval<PosixTime>,
+  self: Interval,
   lower_bound: TimeUnit,
   upper_bound: TimeUnit,
-) -> Interval<PosixTime> {
+) -> Interval {
   self |> opr_interval(lower_bound, upper_bound, sub_bound)
 }
 
 // ## IntervalBound
 
 fn opr_bound(
-  self: IntervalBound<PosixTime>,
+  self: IntervalBound,
   bound: TimeUnit,
-  opr: fn(IntervalBoundType<PosixTime>, TimeUnit) ->
-    IntervalBoundType<PosixTime>,
-) -> IntervalBound<PosixTime> {
+  opr: fn(IntervalBoundType, TimeUnit) -> IntervalBoundType,
+) -> IntervalBound {
   IntervalBound { ..self, bound_type: self.bound_type |> opr(bound) }
 }
 
@@ -270,10 +269,7 @@ fn opr_bound(
 ///   |> add_bound(2 |> MS)
 /// // == IntervalBound { bound_type: Finite(5000 + 2), is_inclusive: True }
 /// ```
-pub fn add_bound(
-  self: IntervalBound<PosixTime>,
-  bound: TimeUnit,
-) -> IntervalBound<PosixTime> {
+pub fn add_bound(self: IntervalBound, bound: TimeUnit) -> IntervalBound {
   self |> opr_bound(bound, add_finite)
 }
 
@@ -303,20 +299,17 @@ pub fn add_bound(
 ///   |> sub_bound(2 |> MS)
 /// // == IntervalBound { bound_type: Finite(5000 - 2), is_inclusive: True }
 /// ```
-pub fn sub_bound(
-  self: IntervalBound<PosixTime>,
-  bound: TimeUnit,
-) -> IntervalBound<PosixTime> {
+pub fn sub_bound(self: IntervalBound, bound: TimeUnit) -> IntervalBound {
   self |> opr_bound(bound, sub_finite)
 }
 
 // ## Finite IntervalBoundType
 
 fn opr_finite(
-  self: IntervalBoundType<PosixTime>,
+  self: IntervalBoundType,
   finite: TimeUnit,
   opr: fn(PosixTime, TimeUnit) -> PosixTime,
-) -> IntervalBoundType<PosixTime> {
+) -> IntervalBoundType {
   when self is {
     interval.Finite(time) -> time |> opr(finite) |> interval.Finite
     infinite -> infinite
@@ -351,9 +344,9 @@ fn opr_finite(
 /// // == Finite(5000 + 2)
 /// ```
 pub fn add_finite(
-  self: IntervalBoundType<PosixTime>,
+  self: IntervalBoundType,
   finite: TimeUnit,
-) -> IntervalBoundType<PosixTime> {
+) -> IntervalBoundType {
   self |> opr_finite(finite, add_time)
 }
 
@@ -385,8 +378,8 @@ pub fn add_finite(
 /// // == Finite(5000 - 2)
 /// ```
 pub fn sub_finite(
-  self: IntervalBoundType<PosixTime>,
+  self: IntervalBoundType,
   finite: TimeUnit,
-) -> IntervalBoundType<PosixTime> {
+) -> IntervalBoundType {
   self |> opr_finite(finite, sub_time)
 }
