@@ -13,9 +13,9 @@ This library contains a set of tools, mainly for testing purposes:
 | 🟡  | **Version**     | **v0.1.0**                                                                               | 🛠️  |
 | 🟡  | **Codename**    | **lithium**                                                                              | ☄️  |
 | 🟡  | **Status**      | **beta**                                                                                 | ⚗️  |
-| 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.2.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.1.0)     | ✅  |
-| 🟢  | **Depends on**  | [**aiken-lang/stdlib v3.0.0**](https://github.com/aiken-lang/stdlib/releases/tag/v2.2.0) | ✅  |
-| 🟢  | **Tested with** | [**aiken v1.1.21**](https://github.com/aiken-lang/aiken/releases/tag/v1.1.9)             | ✅  |
+| 🟢  | **Depends on**  | [**aiken-lang/fuzz v2.2.0**](https://github.com/aiken-lang/fuzz/releases/tag/v2.2.0)     | ✅  |
+| 🟢  | **Depends on**  | [**aiken-lang/stdlib v3.0.0**](https://github.com/aiken-lang/stdlib/releases/tag/v3.0.0) | ✅  |
+| 🟢  | **Tested with** | [**aiken v1.1.21**](https://github.com/aiken-lang/aiken/releases/tag/v1.1.21)            | ✅  |
 
 <!-- | 🟢  | **Version**     | **boron**                                                                                | ✅  | -->
 
