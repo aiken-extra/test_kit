@@ -25,25 +25,25 @@ while getopts "m:E:H" opt; do
     esac
 done
 
-# Get the Latest Block-time
-echo -e "${MAGENTA}Getting${RESET} the latest ${WHITE}block time${RESET}:"
-NOW=$(curl "https://api.koios.rest/api/v1/tip?select=block_time" | jq .[].block_time)
-echo ""
+# # Get the Latest Block-time
+# echo -e "${MAGENTA}Getting${RESET} the latest ${WHITE}block time${RESET}:"
+# NOW=$(curl "https://api.koios.rest/api/v1/tip?select=block_time" | jq .[].block_time)
+# echo ""
 
-# Print the Latest Block-time:
-echo -e "${MAGENTA}Current${RESET} ${WHITE}block time${RESET}: ${NOW}000"
-echo ""
+# # Print the Latest Block-time:
+# echo -e "${MAGENTA}Current${RESET} ${WHITE}block time${RESET}: ${NOW}000"
+# echo ""
 
-# Configure `aiken.toml`
-CONFIG=()
-while read LINE; do
-    if [[ "$LINE" == now* ]]; then
-        CONFIG+=("now = ${NOW}000")
-    else
-        CONFIG+=("$LINE")
-    fi
-done < aiken.toml
-printf "%s\n" "${CONFIG[@]}" > aiken.toml
+# # Configure `aiken.toml`
+# CONFIG=()
+# while read LINE; do
+#     if [[ "$LINE" == now* ]]; then
+#         CONFIG+=("now = ${NOW}000")
+#     else
+#         CONFIG+=("$LINE")
+#     fi
+# done < aiken.toml
+# printf "%s\n" "${CONFIG[@]}" > aiken.toml
 
 # Run `aiken check``
 echo -e "${MAGENTA}Running${RESET} ${WHITE}aiken check${RESET}:"
