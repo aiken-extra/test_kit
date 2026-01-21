@@ -461,19 +461,19 @@ pub fn delegate_fuzzer(
             VoteFuzzed -> delegate_representative_fuzzer(FromFuzzed)
           },
         )
-      DelegateVote(delegate_representative)
+      DelegateVote { delegate_representative }
     }
   let fuzz_both =
     fn((block_production_stake_pool, vote_delegate_representative)) {
       expect
-        DelegateBlockProduction(stake_pool),
-        DelegateVote(delegate_representative),
+        DelegateBlockProduction { stake_pool },
+        DelegateVote { delegate_representative },
       <-
         fuzz.map2(
           fuzz_block_production(block_production_stake_pool),
           fuzz_vote(vote_delegate_representative),
         )
-      DelegateBoth(stake_pool, delegate_representative)
+      DelegateBoth { stake_pool, delegate_representative }
     }
 
   fuzz.either3(
@@ -648,23 +648,19 @@ pub fn data_fuzzer() -> Fuzzer<Data> {
   fuzz.either4(
     {
       let bool <- fuzz.map(fuzz.bool())
-      let data: Data = bool
-      data
+      bool |> as_data
     },
     {
       let byte <- fuzz.map(fuzz.byte())
-      let data: Data = byte
-      data
+      byte |> as_data
     },
     {
       let bytearray <- fuzz.map(fuzz.bytearray())
-      let data: Data = bytearray
-      data
+      bytearray |> as_data
     },
     {
       let int <- fuzz.map(fuzz.int())
-      let data: Data = int
-      data
+      int |> as_data
     },
   )
 }
@@ -1034,8 +1030,8 @@ pub fn inputs_with_an_authentic_script_input_fuzzer(
   let sort_inputs =
     fn(transaction_inputs) {
       let
-        transaction.Input(l_o_ref, _),
-        transaction.Input(r_o_ref, _),
+        transaction.Input { output_reference: l_o_ref, .. },
+        transaction.Input { output_reference: r_o_ref, .. },
       <- list.sort(transaction_inputs)
 
       l_o_ref |> output_reference.compare(r_o_ref)

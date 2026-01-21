@@ -1,10 +1,10 @@
 //// @hidden
 //// ```
-//// Aiken v1.1.9:
-//// │ PASS [mem: 30377, cpu: 8161595] testing_all_true
-//// │ PASS [mem: 29117, cpu: 7545021] testing_any_true
-//// │ PASS [mem: 33382, cpu: 9021840] testing_all_false
-//// │ PASS [mem: 31521, cpu: 8233217] testing_any_false
+//// Aiken v1.1.21:
+//// │ PASS [mem:  25.34 K, cpu:   7.27 M] testing_all_true
+//// │ PASS [mem:  23.55 K, cpu:   6.50 M] testing_any_true
+//// │ PASS [mem:  27.85 K, cpu:   8.06 M] testing_all_false
+//// │ PASS [mem:  25.55 K, cpu:   7.12 M] testing_any_false
 //// ```
 
 use test_kit/collections/logic.{all_false, all_true, any_false, any_true}

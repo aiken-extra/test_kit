@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>test_kit/collections - aiken-extra/test_kit</title>
+    <title>config - aiken-extra/test_kit</title>
     <meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)"/>
     <meta name="theme-color" content="#1e1e2e" media="(prefers-color-scheme: dark)"/>
-    <link rel="icon" type="image/svg+xml" sizes="any" href="../favicon.svg"/>
-    <link rel="stylesheet" href="../css/index.css?v=1.1.21" type="text/css"/>
-    <link id="syntax-theme" rel="stylesheet" href="../css/atom-one-light.min.css?v=1.1.21"/>
+    <link rel="icon" type="image/svg+xml" sizes="any" href="./favicon.svg"/>
+    <link rel="stylesheet" href="./css/index.css?v=1.1.21" type="text/css"/>
+    <link id="syntax-theme" rel="stylesheet" href="./css/atom-one-light.min.css?v=1.1.21"/>
   </head>
   <body class="prewrap-off theme-light drawer-closed">
     <script>
       "use strict";
-      window.breadcrumbs = '..';
+      window.breadcrumbs = '.';
       const aikenConfig = {
         theme: {
           values: (() => {
@@ -118,7 +118,7 @@
       </button>
 
       <h2>
-        <a href="../">test_kit</a>
+        <a href="./">test_kit</a>
         <span id="project-version">
           <span>lithium-β </span>
         </span>
@@ -190,40 +190,14 @@
 
 
 
-
-
-<h2>Functions</h2>
+<h2>Constants</h2>
 <ul>
   
-    
-        <li data-heading="2"><a href="#List">List</a></li>
-    
-  
-    
-        <li><a href="#list_and">list_and</a></li>
-
-      
-  
-    
-        <li><a href="#list_or">list_or</a></li>
-
-      
-  
-    
-        <li data-heading="2"><a href="#Zip">Zip</a></li>
-    
-  
-    
-        <li><a href="#zip3">zip3</a></li>
-
-      
-  
-    
-        <li><a href="#unzip3">unzip3</a></li>
-
-      
+  <li><a href="#now">now</a></li>
   
 </ul>
+
+
 
 
 
@@ -232,15 +206,15 @@
         
 	  
 	    
-	      <li data-indent="0"><a href="../config.html">
-	      config
+	      <li data-indent="0" data-current><a href="./config.html">
+	      <strong>config</strong>
 	      </a></li>
 	    
 	  
         
 	  
 	    
-	      <li data-indent="0"><a href="../test_kit.html">
+	      <li data-indent="0"><a href="./test_kit.html">
 	      test_kit
 	      </a></li>
 	    
@@ -248,15 +222,15 @@
         
 	  
 	    
-	      <li data-indent="1" data-current><a href="../test_kit/collections.html">
-	      <strong>collections</strong>
+	      <li data-indent="1"><a href="./test_kit/collections.html">
+	      collections
 	      </a></li>
 	    
 	  
         
 	  
 	    
-	      <li data-indent="2"><a href="../test_kit/collections/logic.html">
+	      <li data-indent="2"><a href="./test_kit/collections/logic.html">
 	      logic
 	      </a></li>
 	    
@@ -264,7 +238,7 @@
         
 	  
 	    
-	      <li data-indent="1"><a href="../test_kit/fuzzy.html">
+	      <li data-indent="1"><a href="./test_kit/fuzzy.html">
 	      fuzzy
 	      </a></li>
 	    
@@ -272,7 +246,7 @@
         
 	  
 	    
-	      <li data-indent="2"><a href="../test_kit/fuzzy/fuzzer.html">
+	      <li data-indent="2"><a href="./test_kit/fuzzy/fuzzer.html">
 	      fuzzer
 	      </a></li>
 	    
@@ -280,7 +254,7 @@
         
 	  
 	    
-	      <li data-indent="1"><a href="../test_kit/time.html">
+	      <li data-indent="1"><a href="./test_kit/time.html">
 	      time
 	      </a></li>
 	    
@@ -288,7 +262,7 @@
         
 	  
 	    
-	      <li data-indent="2"><a href="../test_kit/time/unwrap.html">
+	      <li data-indent="2"><a href="./test_kit/time/unwrap.html">
 	      unwrap
 	      </a></li>
 	    
@@ -296,7 +270,7 @@
         
 	  
 	    
-	      <li data-indent="1"><a href="../test_kit/tx.html">
+	      <li data-indent="1"><a href="./test_kit/tx.html">
 	      tx
 	      </a></li>
 	    
@@ -304,7 +278,7 @@
         
 	  
 	    
-	      <li data-indent="2"><a href="../test_kit/tx/mock.html">
+	      <li data-indent="2"><a href="./test_kit/tx/mock.html">
 	      mock
 	      </a></li>
 	    
@@ -316,85 +290,32 @@
       <main class="content">
         
 <h1 id="module-name" class="module-name">
-  <a href="#module-name">test_kit/collections</a>
+  <a href="#module-name">config</a>
 </h1>
 
 
 
 
 
-
-
 <section class="module-members">
-  <h1 id="module-functions" class="module-member-kind">
-    <a href="#module-functions">Functions</a>
+  <h1 id="module-constants" class="module-member-kind">
+    <a href="#module-constants">Constants</a>
   </h1>
+
   
-  
+  <div class="member">
+    <div class="member-name">
+      <h2 id="now"><pre class="hljs language-aiken">now: Int = 1768998897000</pre></h2>
       
-        <h2 id="List" class="module-heading"><a href="#List">List</a></h3>
+        <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/#L1"></a>
       
-  
-  
-  
-      <div class="member">
-        <div class="member-name">
-          <h2 id="list_and"><pre class="hljs language-aiken">list_and(bool_list: List&lt;Bool&gt;) -&gt; Bool</pre></h2>
-          
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/collections.ak#L7-L9"></a>
-          
-        </div>
-        <div class="rendered-markdown"><p>Tells whether all of the <code>booleans</code> are <code>true</code></p>
-</div>
-      </div>
-    
-  
-  
-      <div class="member">
-        <div class="member-name">
-          <h2 id="list_or"><pre class="hljs language-aiken">list_or(bool_list: List&lt;Bool&gt;) -&gt; Bool</pre></h2>
-          
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/collections.ak#L12-L14"></a>
-          
-        </div>
-        <div class="rendered-markdown"><p>Tells whether any of the <code>booleans</code> is <code>true</code></p>
-</div>
-      </div>
-    
-  
-  
-      
-        <h2 id="Zip" class="module-heading"><a href="#Zip">Zip</a></h3>
-      
-  
-  
-  
-      <div class="member">
-        <div class="member-name">
-          <h2 id="zip3"><pre class="hljs language-aiken">zip3(az: List&lt;a&gt;, bz: List&lt;b&gt;, cz: List&lt;c&gt;) -&gt; List&lt;(a, b, c)&gt;</pre></h2>
-          
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/collections.ak#L19-L22"></a>
-          
-        </div>
-        <div class="rendered-markdown"><p>Combine 3 lists together into a list of 3-tuple.</p>
-</div>
-      </div>
-    
-  
-  
-      <div class="member">
-        <div class="member-name">
-          <h2 id="unzip3"><pre class="hljs language-aiken">unzip3(abc: List&lt;(a, b, c)&gt;) -&gt; (List&lt;a&gt;, List&lt;b&gt;, List&lt;c&gt;)</pre></h2>
-          
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/collections.ak#L25-L32"></a>
-          
-        </div>
-        <div class="rendered-markdown"><p>Decompose a list of 3-tuple into a tuple of 3 lists.</p>
-</div>
-      </div>
-    
+    </div>
+    <div class="rendered-markdown"></div>
+  </div>
   
 </section>
+
+
 
 
       </main>
@@ -472,8 +393,8 @@
       </defs>
     </svg>
 
-    <script src="../js/highlight.min.js?v=1.1.21"></script>
-    <script src="../js/highlightjs-aiken.js?v=1.1.21"></script>
+    <script src="./js/highlight.min.js?v=1.1.21"></script>
+    <script src="./js/highlightjs-aiken.js?v=1.1.21"></script>
     <script>
       document.querySelectorAll("pre code").forEach((elem) => {
         if (elem.className === "") {
@@ -515,10 +436,10 @@
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="../js/lunr.min.js?v=1.1.21"></script>
-    <script src="../js/index.js?v=1768998915"></script>
+    <script src="./js/lunr.min.js?v=1.1.21"></script>
+    <script src="./js/index.js?v=1768998915"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="../search-data.js?v=1768998915"></script>
+    <script src="./search-data.js?v=1768998915"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {

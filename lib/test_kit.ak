@@ -6,13 +6,6 @@ use aiken/primitive/string
 pub type Any =
   Data
 
-/// A convenient way of upcasting any serialisable type to `Data`
-/// instead of doing `let data: Data = from`
-pub fn to_data(from: Any) -> Data {
-  let data: Data = from
-  data
-}
-
 /// Pretty-print data with label. This function calls
 /// [`fuzz.label`](https://aiken-lang.github.io/fuzz/aiken/fuzz.html#label)
 /// internally, so it will work with property testing.

@@ -381,7 +381,7 @@ test testing_specified_key_address_with_fuzzed_delegation_fuzzer_distribution(
 // ### Fuzzed Script Address Fuzzers
 
 test testing_fuzzed_script_address_with_no_delegation_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromScript(Fuzzed),
     WithNoDelegation,
   ),
@@ -416,7 +416,7 @@ test testing_fuzzed_script_address_with_specified_delegation_script_fuzzer(
 }
 
 test testing_fuzzed_script_address_with_fuzzed_delegation_script_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromScript(Fuzzed),
     WithDelegationScript(Fuzzed),
   ),
@@ -452,7 +452,7 @@ test testing_fuzzed_script_address_with_specified_delegation_key_fuzzer(
 }
 
 test testing_fuzzed_script_address_with_fuzzed_delegation_key_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromScript(Fuzzed),
     WithDelegationKey(Fuzzed),
   ),
@@ -464,7 +464,7 @@ test testing_fuzzed_script_address_with_fuzzed_delegation_key_fuzzer(
 }
 
 test testing_fuzzed_script_address_with_the_same_delegation_script_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromScript(Fuzzed),
     WithTheSameDelegationScriptOrKey,
   ),
@@ -476,7 +476,7 @@ test testing_fuzzed_script_address_with_the_same_delegation_script_fuzzer(
 }
 
 test testing_fuzzed_script_address_with_fuzzed_delegation_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromScript(Fuzzed),
     WithFuzzedDelegation,
   ),
@@ -511,7 +511,7 @@ test testing_fuzzed_script_address_with_fuzzed_delegation_fuzzer_distribution(
 // ### Fuzzed Key Address Fuzzers
 
 test testing_fuzzed_key_address_with_no_delegation_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromKey(Fuzzed),
     WithNoDelegation,
   ),
@@ -546,7 +546,7 @@ test testing_fuzzed_key_address_with_specified_delegation_script_fuzzer(
 }
 
 test testing_fuzzed_key_address_with_fuzzed_delegation_script_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromKey(Fuzzed),
     WithDelegationScript(Fuzzed),
   ),
@@ -582,7 +582,7 @@ test testing_fuzzed_key_address_with_specified_delegation_key_fuzzer(
 }
 
 test testing_fuzzed_key_address_with_fuzzed_delegation_key_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromKey(Fuzzed),
     WithDelegationKey(Fuzzed),
   ),
@@ -594,7 +594,7 @@ test testing_fuzzed_key_address_with_fuzzed_delegation_key_fuzzer(
 }
 
 test testing_fuzzed_key_address_with_the_same_delegation_key_fuzzer(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromKey(Fuzzed),
     WithTheSameDelegationScriptOrKey,
   ),
@@ -606,7 +606,7 @@ test testing_fuzzed_key_address_with_the_same_delegation_key_fuzzer(
 }
 
 test testing_fuzzed_key_address_with_fuzzed_delegation_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromKey(Fuzzed),
     WithFuzzedDelegation,
   ),
@@ -641,7 +641,7 @@ test testing_fuzzed_key_address_with_fuzzed_delegation_fuzzer_distribution(
 // ### Fuzzed Address Fuzzers
 
 test testing_fuzzed_address_with_no_delegation_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromFuzzed,
     WithNoDelegation,
   ),
@@ -684,7 +684,7 @@ test testing_fuzzed_address_with_specified_delegation_script_fuzzer_distribution
 }
 
 test testing_fuzzed_address_with_fuzzed_delegation_script_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromFuzzed,
     WithDelegationScript(Fuzzed),
   ),
@@ -725,7 +725,7 @@ test testing_fuzzed_address_with_specified_delegation_key_fuzzer_distribution(
 }
 
 test testing_fuzzed_address_with_fuzzed_delegation_key_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromFuzzed,
     WithDelegationKey(Fuzzed),
   ),
@@ -741,7 +741,7 @@ test testing_fuzzed_address_with_fuzzed_delegation_key_fuzzer_distribution(
 }
 
 test testing_fuzzed_address_with_the_same_delegation_script_or_key_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromFuzzed,
     WithTheSameDelegationScriptOrKey,
   ),
@@ -756,7 +756,7 @@ test testing_fuzzed_address_with_the_same_delegation_script_or_key_fuzzer_distri
 }
 
 test testing_fuzzed_address_with_fuzzed_delegation_fuzzer_distribution(
-  Address(payment_credential, stake_credential) via address_fuzzer(
+  Address { payment_credential, stake_credential } via address_fuzzer(
     FromFuzzed,
     WithFuzzedDelegation,
   ),
@@ -1046,9 +1046,9 @@ test testing_delegate_fuzzer_distribution(
 ) {
   fuzz.label(
     when delegate is {
-      DelegateBlockProduction(_stake_pool) -> @"DelegateBlockProduction"
-      DelegateVote(_delegate_representative) -> @"DelegateVote"
-      DelegateBoth(_stake_pool, _delegate_representative) -> @"DelegateBoth"
+      DelegateBlockProduction { .. } -> @"DelegateBlockProduction"
+      DelegateVote { .. } -> @"DelegateVote"
+      DelegateBoth { .. } -> @"DelegateBoth"
     },
   )
 }
@@ -1201,12 +1201,12 @@ test testing_output_reference_fuzzer(o_ref via output_reference_fuzzer()) {
 // ### Transaction Output Fuzzers
 
 fn test_user_output(utxo: transaction.Output) -> Bool {
-  let transaction.Output(
-    Address(payment_credential, stake_credential),
+  let transaction.Output {
+    address: Address { payment_credential, stake_credential },
     value,
     datum,
     reference_script,
-  ) = utxo
+  } = utxo
 
   // check address
   expect VerificationKey(_payment_key_hash) = payment_credential
@@ -1334,7 +1334,7 @@ test testing_authentic_script_output_fuzzer(
 // ### Transaction Input Fuzzers
 
 fn test_user_input(in: transaction.Input) -> Bool {
-  let transaction.Input(o_ref, utxo) = in
+  let transaction.Input { output_reference: o_ref, output: utxo } = in
   and {
     o_ref |> test_output_reference,
     utxo |> test_user_output,
@@ -1359,7 +1359,7 @@ fn test_script_input(
   datum: transaction.Datum,
   in: transaction.Input,
 ) -> Bool {
-  let transaction.Input(o_ref, utxo) = in
+  let transaction.Input { output_reference: o_ref, output: utxo } = in
   and {
     test_output_reference(o_ref),
     test_script_output(script_hash, datum, utxo),
@@ -1416,7 +1416,7 @@ fn test_authentic_script_input(
   datum: transaction.Datum,
   script_input: transaction.Input,
 ) -> Bool {
-  let transaction.Input(o_ref, utxo) = script_input
+  let transaction.Input { output_reference: o_ref, output: utxo } = script_input
   and {
     test_output_reference(o_ref),
     test_authentic_script_output(script_hash, datum, utxo),

@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)"/>
     <meta name="theme-color" content="#1e1e2e" media="(prefers-color-scheme: dark)"/>
     <link rel="icon" type="image/svg+xml" sizes="any" href="../favicon.svg"/>
-    <link rel="stylesheet" href="../css/index.css?v=1.1.9" type="text/css"/>
-    <link id="syntax-theme" rel="stylesheet" href="../css/atom-one-light.min.css?v=1.1.9"/>
+    <link rel="stylesheet" href="../css/index.css?v=1.1.21" type="text/css"/>
+    <link id="syntax-theme" rel="stylesheet" href="../css/atom-one-light.min.css?v=1.1.21"/>
   </head>
   <body class="prewrap-off theme-light drawer-closed">
     <script>
@@ -120,13 +120,13 @@
       <h2>
         <a href="../">test_kit</a>
         <span id="project-version">
-          <span>helium-α </span>
+          <span>lithium-β </span>
         </span>
         <script>
           "use strict";
 
           if ("undefined" !== typeof versionNodes) {
-            const currentVersion = "vhelium-α";
+            const currentVersion = "vlithium-β";
             if (! versionNodes.find(element => element.version === currentVersion)) {
               versionNodes.unshift({ version: currentVersion, url: "#" });
             }
@@ -297,6 +297,14 @@
         
 	  
 	    
+	      <li data-indent="0"><a href="../config.html">
+	      config
+	      </a></li>
+	    
+	  
+        
+	  
+	    
 	      <li data-indent="0"><a href="../test_kit.html">
 	      test_kit
 	      </a></li>
@@ -398,7 +406,7 @@
         <div class="member-name">
           <h2 id="tuple"><pre class="hljs language-aiken">tuple(a: Fuzzer&lt;a&gt;, b: Fuzzer&lt;b&gt;) -&gt; Fuzzer&lt;(a, b)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L12-L15"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L12-L15"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuples instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map2"><code>map2</code></a></p>
@@ -416,7 +424,7 @@
         <div class="member-name">
           <h2 id="tuple3"><pre class="hljs language-aiken">tuple3(a: Fuzzer&lt;a&gt;, b: Fuzzer&lt;b&gt;, c: Fuzzer&lt;c&gt;) -&gt; Fuzzer&lt;(a, b, c)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L24-L27"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L24-L27"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple3 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map3"><code>map3</code></a></p>
@@ -439,7 +447,7 @@
   d: Fuzzer&lt;d&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L36-L44"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L36-L44"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple4 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map4"><code>map4</code></a></p>
@@ -463,7 +471,7 @@
   e: Fuzzer&lt;e&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d, e)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L53-L62"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L53-L62"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple5 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map5"><code>map5</code></a></p>
@@ -488,7 +496,7 @@
   f: Fuzzer&lt;f&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d, e, f)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L71-L81"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L71-L81"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple6 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map6"><code>map6</code></a></p>
@@ -514,7 +522,7 @@
   g: Fuzzer&lt;g&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d, e, f, g)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L90-L101"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L90-L101"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple7 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map7"><code>map7</code></a></p>
@@ -541,7 +549,7 @@
   h: Fuzzer&lt;h&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d, e, f, g, h)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L110-L122"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L110-L122"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple8 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map8"><code>map8</code></a></p>
@@ -569,7 +577,7 @@
   i: Fuzzer&lt;i&gt;,
 ) -&gt; Fuzzer&lt;(a, b, c, d, e, f, g, h, i)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L131-L144"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L131-L144"></a>
           
         </div>
         <div class="rendered-markdown"><p>A convenient way of generating tuple9 instead of doing <a href="https://aiken-lang.github.io/fuzz/aiken/fuzz.html#map9"><code>map9</code></a></p>
@@ -593,7 +601,7 @@
         <div class="member-name">
           <h2 id="unique"><pre class="hljs language-aiken">unique(fuzzer: Fuzzer&lt;a&gt;, count: Int) -&gt; Fuzzer&lt;List&lt;a&gt;&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L149-L151"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L149-L151"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a list of <code>n</code> unique elements from the given fuzzer.</p>
@@ -606,7 +614,7 @@
         <div class="member-name">
           <h2 id="unique2"><pre class="hljs language-aiken">unique2(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L154-L157"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L154-L157"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 2 unique elements from the given fuzzer.</p>
@@ -619,7 +627,7 @@
         <div class="member-name">
           <h2 id="unique3"><pre class="hljs language-aiken">unique3(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L160-L163"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L160-L163"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 3 unique elements from the given fuzzer.</p>
@@ -632,7 +640,7 @@
         <div class="member-name">
           <h2 id="unique4"><pre class="hljs language-aiken">unique4(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L166-L169"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L166-L169"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 4 unique elements from the given fuzzer.</p>
@@ -645,7 +653,7 @@
         <div class="member-name">
           <h2 id="unique5"><pre class="hljs language-aiken">unique5(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L172-L175"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L172-L175"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 5 unique elements from the given fuzzer.</p>
@@ -658,7 +666,7 @@
         <div class="member-name">
           <h2 id="unique6"><pre class="hljs language-aiken">unique6(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L178-L181"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L178-L181"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 6 unique elements from the given fuzzer.</p>
@@ -671,7 +679,7 @@
         <div class="member-name">
           <h2 id="unique7"><pre class="hljs language-aiken">unique7(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L184-L187"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L184-L187"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 7 unique elements from the given fuzzer.</p>
@@ -684,7 +692,7 @@
         <div class="member-name">
           <h2 id="unique8"><pre class="hljs language-aiken">unique8(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a, a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L190-L193"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L190-L193"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 8 unique elements from the given fuzzer.</p>
@@ -697,7 +705,7 @@
         <div class="member-name">
           <h2 id="unique9"><pre class="hljs language-aiken">unique9(fuzzer: Fuzzer&lt;a&gt;) -&gt; Fuzzer&lt;(a, a, a, a, a, a, a, a, a)&gt;</pre></h2>
           
-      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/helium-α/lib/test_kit/fuzzy.ak#L196-L199"></a>
+      	    <a class="member-source" alt="view source" title="view source" target="_blank" href="https://github.com/aiken-extra/test_kit/blob/lithium-β/lib/test_kit/fuzzy.ak#L196-L199"></a>
           
         </div>
         <div class="rendered-markdown"><p>Generates a tuple of 9 unique elements from the given fuzzer.</p>
@@ -783,8 +791,8 @@
       </defs>
     </svg>
 
-    <script src="../js/highlight.min.js?v=1.1.9"></script>
-    <script src="../js/highlightjs-aiken.js?v=1.1.9"></script>
+    <script src="../js/highlight.min.js?v=1.1.21"></script>
+    <script src="../js/highlightjs-aiken.js?v=1.1.21"></script>
     <script>
       document.querySelectorAll("pre code").forEach((elem) => {
         if (elem.className === "") {
@@ -826,10 +834,10 @@
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="../js/lunr.min.js?v=1.1.9"></script>
-    <script src="../js/index.js?v=1736788049"></script>
+    <script src="../js/lunr.min.js?v=1.1.21"></script>
+    <script src="../js/index.js?v=1768998915"></script>
     <!-- Load the search index using JSONP to avoid CORS issues -->
-    <script src="../search-data.js?v=1736788049"></script>
+    <script src="../search-data.js?v=1768998915"></script>
     <script>
       void function() {
         if (typeof tippy !== "undefined") {
