@@ -20,5 +20,4 @@ name = "aiken-lang/fuzz"
 version = "2.2.0"
 source = "github"
 
-[config.default]
-now = 1769000103000
+[config]
